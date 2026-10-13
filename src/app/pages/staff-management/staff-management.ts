@@ -174,6 +174,7 @@ filterallData: any[] = [];    // filtered FULL data
     private fb: FormBuilder, private toaster:ToastrService,private dialog: MatDialog,private elementRef: ElementRef,  private spinner:NgxSpinnerService, private toastr:ToastrService, private dataService:DataService, private sanitizer:DomSanitizer ) {
        this.form = this.fb.group({
       empId: ['', Validators.required],
+      empEndDate: ['', Validators.required],
       name: ['', Validators.required],
       userId: ['', Validators.required],
       // password:['', Validators.required],
@@ -1337,6 +1338,7 @@ console.log(ids); // [1,2,1011]
               userId: empData.userId,
               deptId: empData.deptId,
               name: empData.name,
+              empEndDate: empData.empEndDate,
               companyName: empData.companyName,
               rollId: empData.rollId,
               categoryId: empData.categoryId,

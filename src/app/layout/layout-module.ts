@@ -111,6 +111,16 @@ export const routes: Routes = [
         loadComponent:()=> import('../pages/master/add-department/add-department').then((m)=>m.AddDepartment)
         // ,canActivate:[authGuard]
       },
+      {
+        path:'visitor-card-master',
+        loadComponent:()=> import('../pages/master/visitor-card-master/visitor-card-master').then((m)=>m.VisitorCardMaster)
+        // ,canActivate:[authGuard]
+      },
+      {
+        path:'workPermit-card-master',
+        loadComponent:()=> import('../pages/master/work-permit-card-master/work-permit-card-master').then((m)=>m.WorkPermitCardMaster)
+        // ,canActivate:[authGuard]
+      },
 
       {
         path:'add-group',
