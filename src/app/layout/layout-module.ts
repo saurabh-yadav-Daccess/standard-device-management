@@ -187,6 +187,10 @@ export const routes: Routes = [
       path:'entry-exit-status-report',
       loadComponent:()=> import('../pages/reports/entry-exit-status-report/entry-exit-status-report').then((m)=> m.EntryExitStatusReport)
      },
+       {
+      path:'monthly-work-report',
+      loadComponent:()=> import('../pages/reports/monthly-work-report/monthly-work-report').then((m)=> m.MonthlyWorkReport)
+     },
      
    {
       path:'person-tracking-report',

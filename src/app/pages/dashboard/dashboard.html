@@ -112,7 +112,7 @@
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
 
     <!-- LEFT SIDE : Employee Cards -->
-    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
 
       <!-- Total Employee -->
       <div
@@ -122,12 +122,10 @@
       >
         <div class="flex items-center justify-between gap-4 w-full">
 
-          <!-- Title -->
           <p class="text-sm font-semibold text-gray-600 m-0 text-center">
             User Strength :
           </p>
 
-          <!-- Count -->
           <div class="text-2xl font-bold text-[#004A71]">
             {{ totalEmployee }}
           </div>
@@ -136,7 +134,6 @@
       </div>
 
 
-      <!-- Present Employee -->
       <div
         class="bg-white border border-gray-200 rounded-xl px-4 py-1
                shadow-sm hover:shadow-md transition-all duration-200
@@ -144,14 +141,29 @@
       >
         <div class="flex items-center justify-between gap-4 w-full">
 
-          <!-- Title -->
           <p class="text-sm font-semibold text-gray-600 m-0 text-center">
              Face Enrollment : 
           </p>
 
-          <!-- Count -->
           <div class="text-2xl font-bold text-[#004A71]">
             {{ presentEmployee }}
+          </div>
+
+        </div>
+      </div>
+      <div
+        class="bg-white border border-gray-200 rounded-xl px-4 py-1
+               shadow-sm hover:shadow-md transition-all duration-200
+               flex items-center justify-center"
+      >
+        <div class="flex items-center justify-between gap-4 w-full">
+
+          <p class="text-sm font-semibold text-gray-600 m-0 text-center">
+              Remaining Enrollment : 
+          </p>
+
+          <div class="text-2xl font-bold text-[#004A71]">
+            {{ remainingEmployee }}
           </div>
 
         </div>

@@ -77,36 +77,54 @@
 
     </div>
 
-    <!-- RIGHT SIDE: LEGENDS -->
- <div class="w-full flex md:justify-end justify-start items-center">
+ <!-- <div class="w-full flex md:justify-end justify-start items-center">
   <div class="flex flex-wrap items-center gap-6 py-2">
     
-    <!-- Valid Punch IN -->
     <div class="flex items-center gap-2">
       <div class="w-3.5 h-3.5 bg-green-500 rounded-full shadow-sm"></div>
       <span class="text-sm font-semibold text-[#1d5c8a]">Valid Punch IN</span>
     </div>
 
-    <!-- Valid Punch OUT -->
     <div class="flex items-center gap-2">
       <div class="w-3.5 h-3.5 bg-[#1698e8] rounded-full shadow-sm"></div>
       <span class="text-sm font-semibold text-[#1d5c8a]">Valid Punch OUT</span>
     </div>
 
-    <!-- Invalid Response -->
     <div class="flex items-center gap-2">
       <div class="w-3.5 h-3.5 bg-red-600 rounded-full shadow-sm"></div>
       <span class="text-sm font-semibold text-[#1d5c8a]">Invalid Response</span>
     </div>
 
   </div>
-</div>
+</div> -->
   </div>
 </div>
 <div>
 
+
+  <div style="height: 40px;" *ngIf="RoleName ==='Admin'">
+<span class="font-semibold card-title ">Branch Wise Dashboard</span>
+</div>
+  
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full" *ngIf="RoleName ==='Admin'">
+
+
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md" *ngFor="let item of todayspunchlogdata">
+        <div class="text-sm font-semibold card-title1 tracking-wider px-4 pt-3" [title]="item.locationName">
+          {{item.locationName}}
+        </div>
+        <div class="px-4 pb-3 pt-1">
+          <div class="text-2xl font-bold text-[#1d5c8a]">{{item.totalCount}}</div>
+        </div>
+      </div>
+
+      <div class="text-sm text-gray-500" *ngIf="todayspunchlogdata.length === 0">No branch data found.</div>
+
+      </div>
+
   <!-- ==== TODAY'S PUNCHING LOGS ==== -->
-  <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-6">
+  <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-6" *ngIf="RoleName !=='Admin'">
     <!-- HEADER ROW -->
     <div class="flex items-center justify-between mb-4">
       <div class="text-[#1d5c8a] font-bold text-lg">
@@ -192,7 +210,7 @@
 
 
   <!-- ==== TODAY'S ALARM LOGS ==== -->
-  <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+  <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5" *ngIf="RoleName !=='Admin'">
     <!-- HEADER ROW -->
     <div class="flex items-center justify-between mb-4">
       <div class="text-[#1d5c8a] font-bold text-lg">
@@ -209,7 +227,7 @@
     </div>
 
     <!-- TABLE -->
-    <div class="h-83 overflow-auto custom-scrollbar rounded-lg border border-gray-100 overflow-hidden">
+    <div class="h-83 overflow-auto custom-scrollbar rounded-lg border border-gray-100">
       <table class="w-full text-sm text-left border-collapse">
         <thead class="bg-[rgba(0,150,225,1)] text-white sticky top-0 z-10">
           <tr>

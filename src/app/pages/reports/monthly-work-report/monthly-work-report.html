@@ -1,0 +1,239 @@
+<div class="p-0 ">
+  <!-- TOP FILTER BAR -->
+
+  <div class="flex flex-wrap items-center gap-3 py-3 ">
+
+ <div *ngIf="RoleName !== 'Branch Admin'" class="w-52" style="width:315px;">
+    <ng-select style="border: 1px solid #2563eb !important;
+    border-radius: 6px !important;" [items]="locationLists" bindLabel="locationName" bindValue="locationId" [clearable]="true"
+      [(ngModel)]="selectedLocationIds" placeholder="Select Branch">
+    </ng-select>
+</div>
+
+
+<div class="w-52">
+
+ <ng-select style="border: 1px solid #2563eb !important;
+    border-radius: 6px !important;"
+    class="custom-ng-select"
+    [items]="getAllList"
+    bindLabel="categoryName"
+    bindValue="categoryId"
+    [multiple]="true"
+    [searchable]="true"
+    [closeOnSelect]="false"
+    placeholder="Select Category"
+    [clearable]="false"
+    [(ngModel)]="selectedCategoryIds">
+
+    <!-- Select All -->
+    <ng-template ng-header-tmp>
+        <div class="px-2 py-2 border-b">
+            <label class="flex items-center cursor-pointer">
+                <input
+                    type="checkbox"
+                    [checked]="isAllCategorySelected()"
+                    (click)="$event.stopPropagation()"
+                    (change)="toggleSelectAllCategory()">
+
+                <span class="ml-2">Select All</span>
+            </label>
+        </div>
+    </ng-template>
+
+    <!-- Options -->
+    <ng-template
+        ng-option-tmp
+        let-item="item"
+        let-item$="item$">
+
+        <input
+            type="checkbox"
+            [checked]="item$.selected"
+            tabindex="-1"
+            class="mr-2">
+
+        {{ item.categoryName }}
+
+    </ng-template>
+
+</ng-select>
+
+</div>
+
+<!-- From Date -->
+<div class="date-field">
+  <label>From Date</label>
+
+  <input
+    type="date"
+    [value]="fromDate | date:'yyyy-MM-dd'"
+    (change)="fromDate = $any($event.target).valueAsDate"
+    [max]="maxDate" />
+</div>
+
+<!-- To Date -->
+<div class="date-field">
+  <label>To Date</label>
+
+  <input
+    type="date"
+    [value]="toDate | date:'yyyy-MM-dd'"
+    (change)="toDate = $any($event.target).valueAsDate"
+    [max]="maxDate" />
+</div>
+
+
+  <!-- Buttons (right aligned) -->
+  <div class="flex items-center gap-2 ml-auto" style="width: 100%; justify-content: flex-end;">
+    <button style="cursor: pointer;"
+      type="button"
+  class="bg-[#005177] hover:bg-[#003e5c] text-white font-medium py-2 px-2 rounded-lg normal-case shadow-md transition-all duration-200 flex items-center justify-center export-btn"
+      (click)="MonthlyWorkReport()"
+    >
+      View Report
+    </button>
+
+    <button
+  type="button"
+  class="bg-[#005177] hover:bg-[#003e5c] text-white font-medium py-2 px-2 rounded-lg normal-case shadow-md transition-all duration-200 flex items-center justify-center export-btn"
+       (click)="exportPdfFromSelectedRange()">
+      Export to pdf
+    </button>
+
+        <button
+  type="button"
+  class="bg-[#005177] hover:bg-[#003e5c] text-white  text-sm font-medium py-2 px-2 rounded-lg normal-case shadow-md transition-all duration-200 flex items-center justify-center export-btn"
+ (click)="onExportExcel()" >
+
+  Export to Excel
+</button>
+  </div>
+</div>
+
+
+      <div #contentToConvert id="contentToConvert" class="pdf-container">
+    <!-- Title row -->
+
+ <div class="text-center">
+      <span class="font-semibold text-lg">Monthly Work Load Report</span>
+    </div>
+
+       <div class="text-center mt-2  text-[#004A71] leading-5">
+     <div>
+      <span>From Date:</span>
+      <span class="font-semibold">
+        {{ fromDate | date:'dd MMM, y' }}
+        to
+        {{ toDate | date:'dd MMM, y' }}
+      </span>
+    </div>
+
+    </div>
+
+  <!-- Branch Name & Report Time -->
+
+  <div class="flex items-center justify-between mb-3">
+
+  <div>
+    <p class="text-[#004A71]">
+      Branch Name:
+      <span class="font-semibold">
+        {{ getSelectedLocationName() }}
+      </span>
+    </p>
+  </div>
+
+  <div class="text-right text-[#004A71] leading-5">
+    <div>
+      <span>Report Time:</span>
+      <span class="font-semibold">
+{{ now | date:'dd MMM, y, h:mm a' }}      </span>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="pdf-table-wrapper">
+  <table class="pdf-table">
+
+    <colgroup>
+      <col style="width:50px">
+      <col style="width:90px">
+      <col style="width:160px">
+      <col style="width:130px">
+      <col style="width:160px">
+      <col style="width:70px">
+      <col style="width:70px">
+      <col style="width:70px">
+      <col style="width:70px">
+      <col style="width:70px">
+      <col style="width:70px">
+      <col style="width:110px">
+      <col style="width:110px">
+    </colgroup>
+
+    <thead>
+
+      <tr>
+        <th colspan="13" class="category-title">
+          Category Name : {{ selectedCategoryNames }}
+        </th>
+      </tr>
+
+      <tr class="header-row">
+        <th rowspan="2">SR. NO</th>
+        <th rowspan="2">Employee Id</th>
+        <th rowspan="2">Employee Name</th>
+        <th rowspan="2">Designation</th>
+        <th rowspan="2">Branch Name</th>
+        <th colspan="3">Count</th>
+        <th colspan="3">Duplicates</th>
+
+        <th colspan="2">
+          Working Duration ({{totalworkinghours}} Hours)
+        </th>
+      </tr>
+
+      <tr class="header-row">
+        <th>Entry</th>
+        <th>Exits</th>
+        <th>Total</th>
+        <th>In</th>
+        <th>Out</th>
+        <th>Total</th>
+        <th>In  Campus</th>
+        <th>Out Campus</th>
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let row of reportData; let i = index">
+
+        <td>{{ i + 1 }}</td>
+        <td>{{ row.empId }}</td>
+        <td style="text-align: left;">{{ row.employeeName }}</td>
+        <td style="text-align: left;">{{ row.designation }}</td>
+        <td style="text-align: left;"> {{row.locationName}} </td>
+        <td>{{ row.entryCount }}</td>
+        <td>{{ row.exitCount }}</td>
+        <td>{{ row.totalCount }}</td>
+        <td>{{ row.duplicateInCount }}</td>
+        <td>{{ row.duplicateOutCount }}</td>
+        <td>{{ row.duplicateTotalCount }}</td>
+        <td>{{ row.inCampusDuration }}</td>
+        <td>{{ row.outCampusDuration }}</td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>
+
+
+  </div>
+  </div>

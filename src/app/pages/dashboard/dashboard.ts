@@ -92,6 +92,7 @@ getAllListlocation:any;
   
 totalEmployee = 0;
 presentEmployee = 0;
+remainingEmployee = 0;
 
   getPersonCountByLocation(locationId?: any) {
     let apiUrl = 'getPersonCountByLocation';
@@ -107,6 +108,7 @@ presentEmployee = 0;
 
   this.totalEmployee = count?.userCount ?? 0;
   this.presentEmployee = count?.backup50Count ?? 0;
+  this.remainingEmployee = this.totalEmployee - this.presentEmployee;
     });
   }
 

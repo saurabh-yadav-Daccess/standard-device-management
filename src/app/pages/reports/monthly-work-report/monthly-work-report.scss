@@ -1,0 +1,795 @@
+.font-semibol{
+font-weight: 500;
+}
+
+ ::ng-deep .mat-internal-form-field>label {
+    margin-left: 0;
+    margin-right: auto;
+    padding-left: 0px !important;
+    padding-right: 0;
+    order: 0;
+    font-weight: 600 !important;
+}
+
+::ng-deep .mat-mdc-option .mat-pseudo-checkbox {
+  display: none !important;
+}
+
+::ng-deep .ng-select.ng-select-single .ng-select-container{
+    height: 44px !important;
+    min-height: 44px !important;
+}
+::ng-deep .ng-select .ng-input input {
+  caret-color: transparent;
+}
+
+/* Select All checkbox purple color */
+::ng-deep .select-all-purple .mdc-checkbox__background {
+  border-color: #7c3aed !important;      /* purple */
+}
+
+::ng-deep .select-all-purple.mat-mdc-checkbox-checked .mdc-checkbox__background,
+::ng-deep .select-all-purple.mat-mdc-checkbox-indeterminate .mdc-checkbox__background {
+  background-color: #7c3aed !important;
+  border-color: #7c3aed !important;
+}
+
+
+
+
+
+ ::ng-deep .mat-mdc-form-field-subscript-wrapper, .mat-mdc-form-field-bottom-align::before {
+    margin-bottom: -12px !important;
+}
+
+
+
+.custom-ng-select .ng-select-container {
+    min-height: 45px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+}::ng-deep .custom-ng-select .ng-select-container {
+    min-height: 45px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+::ng-deep .ng-option {
+    display: flex;
+    align-items: center;
+}
+
+::ng-deep .ng-option input[type="checkbox"] {
+    margin-right: 8px;
+    pointer-events: none;
+}::ng-deep .custom-ng-select .ng-placeholder {
+    color: #9ca3af !important;
+    opacity: 1 !important;
+}
+
+::ng-deep .custom-ng-select .ng-value-container {
+    padding: 6px 10px !important;
+}
+
+/* ===========================
+   Angular Material Field
+=========================== */
+
+::ng-deep .search-field {
+    margin: 0 !important;
+}
+
+::ng-deep .search-field .mat-mdc-text-field-wrapper {
+    height: 44px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    padding: 0 12px !important;
+}
+
+/* Remove Material Fill Background */
+::ng-deep .search-field .mdc-text-field--filled {
+    background: #fff !important;
+}
+
+/* Remove Bottom Line */
+::ng-deep .search-field .mdc-line-ripple {
+    display: none !important;
+}
+
+/* Remove Shadow */
+::ng-deep .search-field .mat-mdc-form-field-focus-overlay {
+    display: none !important;
+}
+
+/* Input Height */
+::ng-deep .search-field .mat-mdc-form-field-flex {
+    height: 44px !important;
+    align-items: center !important;
+}
+
+/* Input Text */
+::ng-deep .search-field input {
+    font-size: 14px !important;
+    color: #111827 !important;
+}
+
+/* Label */
+::ng-deep .search-field .mdc-floating-label {
+    font-size: 14px !important;
+}
+
+/* Focus Border */
+::ng-deep .search-field.mat-focused .mat-mdc-text-field-wrapper {
+    border: 2px solid #2563eb !important;
+}
+
+/* Hide Hint Space */
+::ng-deep .search-field .mat-mdc-form-field-subscript-wrapper {
+    display: none !important;
+}
+
+/* ===========================
+   Datepicker Icon
+=========================== */
+
+::ng-deep .search-field .mat-datepicker-toggle {
+    color: #6b7280 !important;
+}
+
+/* ===========================
+   Employee Dropdown
+=========================== */
+
+.employee-dropdown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.employee-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.employee-item:hover {
+    background: #eff6ff;
+}
+
+.no-record {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px;
+    color: #6b7280;
+    z-index: 999;
+}
+
+/* ===========================
+   ng-select
+=========================== */
+
+::ng-deep .custom-ng-select .ng-select-container {
+    height: 44px !important;
+    min-height: 44px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    box-shadow: none !important;
+}
+
+::ng-deep .custom-ng-select.ng-select-focused .ng-select-container {
+    border: 2px solid #2563eb !important;
+}
+
+::ng-deep .custom-ng-select .ng-placeholder {
+    color: #9ca3af !important;
+}
+
+::ng-deep .custom-ng-select .ng-value {
+    background: #eaf2ff !important;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+::ng-deep .ng-dropdown-panel {
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+::ng-deep .ng-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px !important;
+}
+
+::ng-deep .ng-option:hover {
+    background: #eff6ff !important;
+}
+
+
+
+.pdf-container {
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+}
+
+.pdf-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.pdf-info {
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+  line-height: 22px;
+}
+
+.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.pdf-table th {
+  background: rgb(0, 150, 225) !important;
+  color: #ffffff;
+  border: 1px solid #696969;
+  padding: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.pdf-table td {
+  border: 1px solid #999898;
+  padding: 6px;
+  text-align: center;
+}
+
+.pdf-table td:nth-child(3) {
+  text-align: left;
+}
+
+
+
+
+
+
+
+.font-semibol{
+font-weight: 500;
+}
+
+ ::ng-deep .mat-internal-form-field>label {
+    margin-left: 0;
+    margin-right: auto;
+    padding-left: 0px !important;
+    padding-right: 0;
+    order: 0;
+    font-weight: 600 !important;
+}
+
+::ng-deep .mat-mdc-option .mat-pseudo-checkbox {
+  display: none !important;
+}
+
+/* Select All checkbox purple color */
+::ng-deep .select-all-purple .mdc-checkbox__background {
+  border-color: #7c3aed !important;      /* purple */
+}
+
+::ng-deep .select-all-purple.mat-mdc-checkbox-checked .mdc-checkbox__background,
+::ng-deep .select-all-purple.mat-mdc-checkbox-indeterminate .mdc-checkbox__background {
+  background-color: #7c3aed !important;
+  border-color: #7c3aed !important;
+}
+
+
+
+
+
+ ::ng-deep .mat-mdc-form-field-subscript-wrapper, .mat-mdc-form-field-bottom-align::before {
+    margin-bottom: -12px !important;
+}
+
+
+
+.custom-ng-select .ng-select-container {
+    min-height: 45px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+}::ng-deep .custom-ng-select .ng-select-container {
+    min-height: 45px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+::ng-deep .ng-option {
+    display: flex;
+    align-items: center;
+}
+
+::ng-deep .ng-option input[type="checkbox"] {
+    margin-right: 8px;
+    pointer-events: none;
+}::ng-deep .custom-ng-select .ng-placeholder {
+    color: #9ca3af !important;
+    opacity: 1 !important;
+}
+
+::ng-deep .custom-ng-select .ng-value-container {
+    padding: 6px 10px !important;
+}
+
+/* ===========================
+   Angular Material Field
+=========================== */
+
+::ng-deep .search-field {
+    margin: 0 !important;
+}
+
+::ng-deep .search-field .mat-mdc-text-field-wrapper {
+    height: 44px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    padding: 0 12px !important;
+}
+
+/* Remove Material Fill Background */
+::ng-deep .search-field .mdc-text-field--filled {
+    background: #fff !important;
+}
+
+/* Remove Bottom Line */
+::ng-deep .search-field .mdc-line-ripple {
+    display: none !important;
+}
+
+/* Remove Shadow */
+::ng-deep .search-field .mat-mdc-form-field-focus-overlay {
+    display: none !important;
+}
+
+/* Input Height */
+::ng-deep .search-field .mat-mdc-form-field-flex {
+    height: 44px !important;
+    align-items: center !important;
+}
+
+/* Input Text */
+::ng-deep .search-field input {
+    font-size: 14px !important;
+    color: #111827 !important;
+}
+
+/* Label */
+::ng-deep .search-field .mdc-floating-label {
+    font-size: 14px !important;
+}
+
+/* Focus Border */
+::ng-deep .search-field.mat-focused .mat-mdc-text-field-wrapper {
+    border: 2px solid #2563eb !important;
+}
+
+/* Hide Hint Space */
+::ng-deep .search-field .mat-mdc-form-field-subscript-wrapper {
+    display: none !important;
+}
+
+/* ===========================
+   Datepicker Icon
+=========================== */
+
+::ng-deep .search-field .mat-datepicker-toggle {
+    color: #6b7280 !important;
+}
+
+/* ===========================
+   Employee Dropdown
+=========================== */
+
+.employee-dropdown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.employee-item {
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.employee-item:hover {
+    background: #eff6ff;
+}
+
+.no-record {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px;
+    color: #6b7280;
+    z-index: 999;
+}
+
+.pdf-export {
+  color: #000 !important;
+  background-color: #fff !important;
+  border-color: #d1d5db !important;
+}
+
+/* ===========================
+   ng-select
+=========================== */
+
+::ng-deep .custom-ng-select .ng-select-container {
+    height: 44px !important;
+    min-height: 44px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    box-shadow: none !important;
+}
+
+::ng-deep .custom-ng-select.ng-select-focused .ng-select-container {
+    border: 2px solid #2563eb !important;
+}
+
+::ng-deep .custom-ng-select .ng-placeholder {
+    color: #9ca3af !important;
+}
+
+::ng-deep .custom-ng-select .ng-value {
+    background: #eaf2ff !important;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+::ng-deep .ng-dropdown-panel {
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+::ng-deep .ng-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px !important;
+}
+
+::ng-deep .ng-option:hover {
+    background: #eff6ff !important;
+}
+
+
+
+
+.pdf-container {
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+}
+
+.pdf-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.pdf-info {
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+  line-height: 22px;
+}
+
+.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.pdf-table th {
+  background: rgb(0, 150, 225) !important;
+  color: #ffffff;
+  border: 1px solid #696969;
+  padding: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.pdf-table td {
+  border: 1px solid #999898;
+  padding: 6px;
+  text-align: center;
+}
+
+.pdf-table td:nth-child(3) {
+  text-align: left;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #contentToConvert, #contentToConvert * {
+    visibility: visible;
+  }
+  #contentToConvert {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  
+  thead {
+    display: table-header-group;
+  }
+}
+
+
+
+.date-field label {
+  display: block;
+  font-size: 12px;
+  color: #004a71;
+  line-height: 14px;
+  margin-bottom: 1px;
+}
+
+.date-field input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  padding: 0;
+}
+
+/* Calendar icon */
+.date-field input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.date-field {
+    width: 139px;
+    height: 46px;
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+    position: relative;
+    background: #fff;
+     margin-right: 0px; 
+    padding: 6px 10px 2px;
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   RESPONSIVE PDF TABLE
+========================================= */
+
+.pdf-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table */
+.pdf-table {
+  width: 100%;
+  min-width: 1340px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 13px;
+  background: #fff;
+}
+
+/* Header */
+.pdf-table th {
+  background: rgb(0, 150, 225) !important;
+  color: #fff;
+  border: 1px solid #696969;
+  padding: 7px 6px;
+  text-align: center;
+  font-weight: 600;
+
+  /* Long header text break */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Body */
+.pdf-table td {
+  border: 1px solid #999898;
+  padding: 6px;
+  text-align: center;
+
+  /* Important for large data */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  /* Long employee name etc. */
+  max-width: 180px;
+}
+
+/* Employee Name */
+.pdf-table td:nth-child(3),
+.pdf-table td:nth-child(4),
+.pdf-table td:nth-child(5) {
+  text-align: left;
+}
+
+/* Category title */
+.pdf-table .category-title {
+  text-align: center;
+  font-weight: 600;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* =========================================
+   SMALL SCREEN
+========================================= */
+
+@media screen and (max-width: 1200px) {
+
+  .pdf-table {
+    font-size: 12px;
+  }
+
+  .pdf-table th,
+  .pdf-table td {
+    padding: 6px 5px;
+  }
+
+  .pdf-table td {
+    max-width: 150px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+  .pdf-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .pdf-table {
+    font-size: 11px;
+  }
+
+  .pdf-table th,
+  .pdf-table td {
+    padding: 5px 4px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL SCREEN
+========================================= */
+
+@media screen and (max-width: 480px) {
+
+  .pdf-table {
+    font-size: 10px;
+  }
+
+  .pdf-table th,
+  .pdf-table td {
+    padding: 4px 3px;
+  }
+
+  .pdf-table td {
+    max-width: 110px;
+  }
+}
+
+
+/* =========================================
+   PDF / PRINT
+========================================= */
+
+@media print {
+
+  .pdf-table-wrapper {
+    width: 100%;
+    overflow: visible !important;
+  }
+
+  .pdf-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed;
+    font-size: 9px;
+  }
+
+  .pdf-table th,
+  .pdf-table td {
+    padding: 4px 3px;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .pdf-table th {
+    background: rgb(0, 150, 225) !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .pdf-table tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .pdf-table thead {
+    display: table-header-group;
+  }
+}

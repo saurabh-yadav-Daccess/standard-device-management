@@ -47,10 +47,12 @@ ngOnInit(){
     console.log(this.locationID ,this.RoleName)
  this.getPunchinglog();
  this.getAlarmLogs()
+ this.getallpunchlogdata()
 this.dataService.setTitle('Real time Dashboard');
   // Every 5 seconds refresh punching logs
   this.punchingLogInterval = setInterval(() => {
     this.getPunchinglog();
+    this.getallpunchlogdata();
   }, 4000);
 
   // Every 5 seconds refresh alarm logs
@@ -100,6 +102,35 @@ countShowOnlyIn:any[] = []
 //   })
 
 // }
+todayspunchlogdata:any[]=[]
+getallpunchlogdata(){
+  this.dataService.getAllData('todaysPunchLogsByLocation').subscribe({
+    next: (res: any) => {
+      if (res.code === 100) {
+        let locations = res?.extend?.locationPunchLogs ?? [];
+
+
+        this.todayspunchlogdata = locations.map((loc: any) => ({
+          locationId: loc.locationId,
+          locationName: loc.locationName,
+          totalCount: loc.totalCount ?? 0
+        }));
+      }
+      else if (res.code === 200) {
+        this.todayspunchlogdata = [];
+      }
+      else if (res.code === 500) {
+        this.toaster.error('Internal server error !');
+      }
+      else {
+        this.toaster.error('Something went wrong !');
+      }
+    },
+    error: (err) => {
+      this.toaster.error(err.error?.msg || 'Failed to load branch wise punch logs!');
+    }
+  });
+}
 
 getPunchinglog() {
   let apiUrl = '';
